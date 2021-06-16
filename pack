@@ -7,9 +7,3 @@ if [ ! -f "$1" ]; then
     else
         echo "no match found for $1 aborting"
 fi
-# uninstaller
-if [ $1 == "-d" ]; then
-    if [ ! -f $2 ]; then
-        rm -rf $2 || rm -f $2
-    fi
-fi
