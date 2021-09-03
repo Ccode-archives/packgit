@@ -5,7 +5,7 @@ error () {
 }
 originaldir=$PWD
 
-cd ~/package-manager
+cd ~/packgit
 
 if [ ! "$1" == "-d" ]; then
   echo downloading...
@@ -30,7 +30,7 @@ if [ -f build.pm ]; then
   fi
 fi
 
-cd ~/package-manager
+cd ~/packgit
 
 if [ "$1" == "-d" ]; then
   rm -rf $2
