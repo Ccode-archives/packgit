@@ -1,7 +1,15 @@
 
-error () {
+git_error () {
   echo already downloaded! Aborting...
   exit 100
+}
+pack_error () {
+  if [ "$1" == "-d" ]; then
+    error="delete"
+  else
+    error="install"
+  fi
+  echo package does not include $error file
 }
 originaldir=$PWD
 
@@ -9,7 +17,7 @@ cd ~/packgit
 
 if [ ! "$1" == "-d" ]; then
   echo downloading...
-  git clone -q https://github.com/$1/$2 >> /dev/null || error
+  git clone -q https://github.com/$1/$2 >> /dev/null || git_error
   echo done.
 fi
 
@@ -22,10 +30,10 @@ fi
 cd $2
 if [ -f build.pm ]; then
   if [ "$1" == "-d" ]; then
-    chmod +x uninst.pm
+    chmod +x uninst.pm || pack_error
     ./uninst.pm
   else
-    chmod +x build.pm
+    chmod +x build.pm || pack_error
     ./build.pm
   fi
 fi
