@@ -10,6 +10,7 @@ pack_error () {
     error="install"
   fi
   echo package does not include $error file
+  exit
 }
 originaldir=$PWD
 
