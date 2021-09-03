@@ -17,7 +17,7 @@ cd ~/packgit
 
 if [ ! "$1" == "-d" ]; then
   echo downloading...
-  git clone -q https://github.com/$1/$2 >> /dev/null || git_error
+  git clone -q https://github.com/$1/$2 &>/dev/null || git_error
   echo done.
 fi
 
