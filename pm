@@ -30,7 +30,7 @@ if [ -f build.pm ]; then
   fi
 fi
 
-cd ..
+cd ~/package-manager
 
 if [ "$3" == "-d" ]; then
   rm -rf $2
