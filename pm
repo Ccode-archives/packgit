@@ -26,7 +26,7 @@ fi
 cd ..
 
 if [ "$3" == "-d" ]; then
-  rm -rf 
+  rm -rf $2
 fi
 
 cd $originaldir
