@@ -17,8 +17,10 @@ fi
 cd $2
 if [ -f build.pm ]; then
   if [ "$3" == "-d" ]; then
+    chmod +x uninst.pm
     ./uninst.pm
   else
+    chmod +x build.pm
     ./build.pm
   fi
 fi
