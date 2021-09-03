@@ -1,6 +1,6 @@
 
 git_error () {
-  if [ -f "$2" ]; then
+  if [ -f $2 ]; then
     echo Already downloaded! Aborting...
   else
     echo Missing package! Aborting...
