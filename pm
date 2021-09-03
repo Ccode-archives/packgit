@@ -1,10 +1,15 @@
+
+error () {
+  echo already downloaded! Aborting...
+  exit 100
+}
 originaldir=$PWD
 
 cd ~/package-manager
 
 if [ ! "$3" == "-d" ]; then
   echo downloading...
-  git clone -q https://github.com/$1/$2 >> /dev/null || exit 100
+  git clone -q https://github.com/$1/$2 >> /dev/null || error
   echo done.
 fi
 
