@@ -4,7 +4,7 @@ cd ~/package-manager
 
 if [ ! "$3" == "-d" ]; then
   echo downloading...
-  git clone -q https://github.com/$1/$2 || exit 100
+  git clone -q https://github.com/$1/$2 >> /dev/null || exit 100
   echo done.
 fi
 
