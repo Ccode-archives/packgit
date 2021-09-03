@@ -1,10 +1,6 @@
 
 git_error () {
-  if [ -f $2 ]; then
-    echo Already downloaded! Aborting...
-  else
-    echo Missing package! Aborting...
-  fi
+  echo Git error! Aborting...
   exit 100
 }
 pack_error () {
