@@ -1,5 +1,5 @@
 
-git_error () {
+download_error () {
   echo Download error! Aborting...
   exit 100
 }
