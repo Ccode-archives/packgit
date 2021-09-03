@@ -1,6 +1,6 @@
 
 git_error () {
-  echo Git error! Aborting...
+  echo Download error! Aborting...
   exit 100
 }
 pack_error () {
@@ -18,7 +18,10 @@ cd ~/packgit
 
 if [ ! "$1" == "-d" ]; then
   echo downloading...
-  git clone -q https://github.com/$1/$2.git &>/dev/null || git_error
+  wget -q https://github.com/$1/$2/archive/refs/heads/main.zip &>/dev/null || download_error
+  mkdir $2
+  unzip "$2-main.zip" -d packgit
+  rm "$2-main.zip"
   echo done.
 fi
 
